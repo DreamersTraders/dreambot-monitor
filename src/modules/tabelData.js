@@ -51,7 +51,7 @@ class TableData {
               }
             }
 
-            tableData.tables += ` Available BitCoins: ${tableData.availableBitCoins}`;
+            tableData.tables += ` BTC Disponibles: ${tableData.availableBitCoins}`;
             tableData.tables += settings.newLine;
             tableData.tables += table.table;
             tableData.tables += settings.newLine;
@@ -79,30 +79,23 @@ class TableData {
   getHead() {
     let header = {
       head: [
-        chalk.cyan.bold('Name'),
+        chalk.cyan.bold('Nombre'),
         chalk.cyan.bold('Str'),
-        chalk.cyan.bold('pm2'),
         chalk.cyan.bold('LL'),
-        chalk.cyan.bold('OO?'),
-        chalk.cyan.bold('# Coins'),
-        chalk.cyan.bold('in BTC'),
-        chalk.cyan.bold('Diff since buy'),
-        chalk.cyan.bold('Buy/Bought'),
-        chalk.cyan.bold('Sell'),
-        chalk.cyan.bold('Last price'),
-        chalk.cyan.bold('Price diff'),
-        chalk.cyan.bold('Price is'),
-        chalk.cyan.bold('# Buys'),
-        chalk.cyan.bold('1 6 h d +'),
-        chalk.cyan.bold('# Sells'),
-        chalk.cyan.bold('1 6 h d +'),
-        chalk.cyan.bold('Profit'),
-        chalk.cyan.bold('Errors')
+        chalk.cyan.bold('OA?'),
+        chalk.cyan.bold('# Monedas'),
+        chalk.cyan.bold('en BTC'),
+        chalk.cyan.bold('Dif desde compra'),
+        chalk.cyan.bold('Compra/Comprado'),
+        chalk.cyan.bold('Venta'),
+        chalk.cyan.bold('Ult precio'),
+        chalk.cyan.bold('Dif precio'),
+        chalk.cyan.bold('Precio actual'),
+        chalk.cyan.bold('Errores')
       ],
       colAligns: [
         'left', // Name
         'left', // Strategies
-        'right', // Pm2
         'right', // Last log time
         'left', // Oo?
         'right', // Coins
@@ -113,11 +106,6 @@ class TableData {
         'right', // Last price
         'right', // Price diff
         'left', // Price is
-        'left', // Buys
-        'left', // 1 6 h d +
-        'left', // Sells
-        'left', // 1 6 h d +
-        'right', // Profit
         'left' // Errors
       ],
       style: {compact: settings.compact}
@@ -208,7 +196,6 @@ class TableData {
             table.push([
               formatter.tradePair(data.tradePair, data.market),
               formatter.strategies(data.buyStrategy, data.sellStrategy),
-              formatter.pm2Status(data.tradePair, pm2Result),
               formatter.timeSince(data.lastTimeStamp),
               formatter.openOrders(data.openOrders || data.noOpenOrders),
               formatter.coins(data.coins),
@@ -219,11 +206,6 @@ class TableData {
               formatter.lastPrice(data.lastPrice, data.tendency),
               formatter.priceDiff(data.priceStatusBuyTimeStamp, data.priceStatusSellTimeStamp, data.priceStatusSweetTimeStamp, data.buyPrice, data.sellPrice, data.lastPrice, data.coins),
               formatter.buySellMessage(data.priceStatusBuyTimeStamp, data.priceStatusSellTimeStamp, data.priceStatusSweetTimeStamp),
-              formatter.trades(data.buyCounter, data.lastTimeStampBuy),
-              formatter.tradesInTimeSlots(data.buys),
-              formatter.trades(data.sellCounter, data.lastTimeStampSell),
-              formatter.tradesInTimeSlots(data.sells),
-              formatter.profit(data.profit),
               formatter.errorCode(data.errors, data.lastTimeStamp)
             ]);
           }
@@ -236,7 +218,6 @@ class TableData {
             '',
             '',
             '',
-            '',
             chalk.bold(formatter.price(totalBTCValue)),
             chalk.bold(formatter.profitPercent(totalBoughtPrice, totalDiffSinceBuy)),
             '',
@@ -244,11 +225,6 @@ class TableData {
             '',
             '',
             '',
-            '',
-            '',
-            '',
-            '',
-            chalk.bold(formatter.profit(totalProfit)),
             ''
           ]);
 

@@ -1,12 +1,12 @@
 {
-  "name": "gunbot-monitor",
-  "version": "0.0.41",
-  "description": "Monitors your GUNBOTs",
-  "homepage": "https://github.com/BeerK0in/gunbot-monitor",
+  "name": "dreambot-monitor",
+  "version": "1.0.2",
+  "description": "Monitorea tu DREAMBOT",
+  "homepage": "https://github.com/DreamersTraders/dreambot-monitor",
   "author": {
-    "name": "BeerK0in",
-    "email": "tbeerkoin@zant.one",
-    "url": "https://github.com/BeerK0in"
+    "name": "DreamersTraders",
+    "email": "dreamerstraders@gmail.com",
+    "url": "https://github.com/DreamersTraders/"
   },
   "files": [
     "src"
@@ -16,11 +16,10 @@
     "gmon": "src/index.js"
   },
   "keywords": [
-    "GUNBOT",
+    "DREAMBOT",
     "monitor",
     "cli",
     "bitcoin",
-    "gunthy",
     "traiding"
   ],
   "devDependencies": {
@@ -61,10 +60,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:BeerK0in/gunbot-monitor.git"
+    "url": "git@github.com:DreamersTraders/dreambot-monitor.git"
   },
   "bugs": {
-    "url": "https://github.com/BeerK0in/gunbot-monitor/issues"
+    "url": "https://github.com/DreamersTraders/dreambot-monitor/issues"
   },
   "license": "MIT"
 }

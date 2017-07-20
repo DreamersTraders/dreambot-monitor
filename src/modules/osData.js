@@ -35,7 +35,7 @@ class OsData {
           let memoryUsed = memoryTotal - memoryAvailable;
           let memoryUsedPercent = Math.floor(memoryUsed / memoryTotal * 100);
 
-          let output = `Memory:       ${gauge(memoryUsed, memoryTotal, 79, memoryTotal * 0.8, `${memoryUsedPercent}% used`)} - available: ${chalk.bold(memoryAvailable)} MB of ${chalk.bold(memoryTotal)} MB`;
+          let output = `Memoria:       ${gauge(memoryUsed, memoryTotal, 79, memoryTotal * 0.8, `${memoryUsedPercent}% usado`)} - disponible: ${chalk.bold(memoryAvailable)} MB of ${chalk.bold(memoryTotal)} MB`;
 
           if (!stats.swaptotal || stats.swaptotal === 0) {
             resolve(output);
@@ -48,7 +48,7 @@ class OsData {
           let swapUsedPercent = Math.floor(swapUsed / swapTotal * 100);
 
           output += settings.newLine;
-          output += `Swap:         ${gauge(swapUsed, swapTotal, 79, swapTotal * 0.8, `${swapUsedPercent}% used`)} - available: ${chalk.bold(swapAvailable)} MB of ${chalk.bold(swapTotal)} MB`;
+          output += `Swap:         ${gauge(swapUsed, swapTotal, 79, swapTotal * 0.8, `${swapUsedPercent}% usado`)} - disponible: ${chalk.bold(swapAvailable)} MB of ${chalk.bold(swapTotal)} MB`;
           resolve(output);
         })
         .catch(error => reject(error));
@@ -63,7 +63,7 @@ class OsData {
         .then(currentLoad => {
           let load = Math.floor(currentLoad);
           this.addToLoadHistory(load);
-          resolve(`Load:         ${sparkline(this.loadHistory, '%')} - current CPU load: ${chalk.bold(load)}%`);
+          resolve(`Carga:         ${sparkline(this.loadHistory, '%')} - Carga actual CPU: ${chalk.bold(load)}%`);
         })
         .catch(error => reject(error));
     });

@@ -13,7 +13,7 @@ class Outputter {
 
   constructor() {
     this.interval = null;
-    this.headline = '   >>>   GUNBOT - MONITOR / BETA  <<<';
+    this.headline = '   >>>   DREAMBOT - MONITOR  <<<';
     this.version = pj.version;
   }
 
@@ -54,14 +54,13 @@ class Outputter {
     output += settings.newLine;
     output += tableData.tables;
     output += settings.newLine;
-    output += chalk.italic(`Use ${chalk.bold('CTRL+C')} to exit.`);
-    output += '  |  ';
-    output += chalk.italic(`Type ${chalk.bold('gmon -h')} to see all options.`);
+    output += chalk.italic(`Use ${chalk.bold('CTRL+C')} para salir`);
+
     output += '  |  ';
     if (settings.iHaveSentATip) {
       output += chalk.bold.green(`You are awesome! Thank you :)`);
     } else {
-      output += chalk.bold.yellow(`Support gmon and send a tip to BTC wallet: 1GJCGZPn6okFefrRjPPWU73XgMrctSW1jT`);
+      output += chalk.bold.yellow(`Para soporte contacte con https://DreamersTraders.com`);
     }
     output += settings.newLine;
 
@@ -85,7 +84,7 @@ class Outputter {
 
   getServerTime() {
     let date = new Date();
-    return `Server time:  ${chalk.bold(date)}`;
+    return `Hora Servidor:  ${chalk.bold(date)}`;
   }
 
   getHeadlineText() {
@@ -95,9 +94,9 @@ class Outputter {
   getSubHeadlineText() {
     let output = `Version ${chalk.bold(this.version)}`;
     output += '  |  ';
-    output += `Refresh interval ${chalk.bold(settings.outputIntervalDelaySeconds)}s`;
-    output += '  |  ';
-    output += chalk.red(`Currently there is a bug in the calculated number of trades and the profit - don't rely on it.`);
+    output += `Intervalo de actualización ${chalk.bold(settings.outputIntervalDelaySeconds)}s`;
+  //  output += '  |  ';
+  //  output += chalk.red(`Currently there is a bug in the calculated number of trades and the profit - don't rely on it.`);
 
     return output;
   }
