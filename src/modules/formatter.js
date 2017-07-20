@@ -144,7 +144,7 @@ class Formatter {
 
   openOrders(message) {
     if (message === 'Open orders') {
-      return chalk.red('yes');
+      return chalk.red('SI');
     }
 
     return chalk.gray('-');
@@ -154,11 +154,11 @@ class Formatter {
     let bss = this.getLatestBuySellSweetMessage(buyMessageDate, sellMessageDate, sweetMessageDate);
 
     if (bss === TOO_HIGH_TO_BUY) {
-      return chalk.blue('too high');
+      return chalk.blue('muy alto');
     }
 
     if (bss === TOO_LOW_TO_SELL) {
-      return chalk.magenta('too low');
+      return chalk.magenta('muy bajo');
     }
 
     if (bss === PRICE_IS_SWEET) {
@@ -485,4 +485,3 @@ class Formatter {
 }
 
 module.exports = new Formatter();
-

@@ -27,7 +27,7 @@ class NetData {
     return new Promise(resolve => {
       let sparkline = require('clui').Sparkline;
       let result = {};
-      result.poloniex = `Connections:  ${sparkline(this.connectionsHistory.poloniex, ' cons/sec')} - Connections to Poloniex per sec.`;
+      result.poloniex = `Connections:  ${sparkline(this.connectionsHistory.poloniex, ' cons/seg')} - conexiones a Poloniex por seg.`;
       result.bittrex = `Connections:  ${sparkline(this.connectionsHistory.bittrex, ' cons/sec')} - Connections to Bittrex per sec.`;
       result.kraken = `Connections:  ${sparkline(this.connectionsHistory.kraken, ' cons/sec')} - Connections to Kraken per sec.`;
 
